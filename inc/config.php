@@ -3,6 +3,7 @@
 define('ROOT_PATH', dirname(__FILE__, 2).'/');
 define('INC_PATH', ROOT_PATH.'inc/');
 define('VIEWS_PATH', INC_PATH.'views/');
+define('CONTROLLERS_PATH', INC_PATH.'controllers/');
 define('STYLES_PATH', ROOT_PATH.'public_html/styles/');
 
 

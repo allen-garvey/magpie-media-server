@@ -1,9 +1,11 @@
 <?php 
 require_once('../inc/config.php');
+require_once(CONTROLLERS_PATH.'file_controller.php');
 
 $context = [];
 
-$context['media_files'] = array_filter(scandir(MEDIA_PATH), function($file) { return is_file(MEDIA_PATH.$file) && !preg_match('`^\\.`', $file); });
+$context['media_directory_listing'] = FileController::fileListingFor(MEDIA_PATH);
+//var_dump($context['media_directory_listing']);
 
 include(VIEWS_PATH.'homepage.php');
 

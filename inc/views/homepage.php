@@ -11,11 +11,24 @@
         <div class="container">
             <h1><?= htmlentities(SITE_TITLE); ?></h1>
             <ul>
-                <?php foreach($context['media_files'] as $mediaFile): ?>
+                <?php foreach($context['media_directory_listing'] as $mediaListing): ?>
                     <li>
-                        <a href="<?= MEDIA_URL.urlencode($mediaFile); ?>">
-                            <?= htmlentities($mediaFile); ?>
-                        </a>
+                        <?php if(is_string($mediaListing)): ?>
+                            <a href="<?= MEDIA_URL.urlencode($mediaListing); ?>">
+                                <?= htmlentities($mediaListing); ?>
+                            </a>
+                        <?php else: ?>
+                           <h4><?= htmlentities($mediaListing['name']); ?></h4>
+                           <ul>
+                               <li>
+                                   <?php foreach($mediaListing['files'] as $file): ?>
+                                        <a href="<?= MEDIA_URL.htmlentities($file); ?>">
+                                            <?= htmlentities($file); ?>
+                                        </a>
+                                    <?php endforeach; ?>
+                               </li>
+                           </ul>
+                        <?php endif; ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
