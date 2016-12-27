@@ -7,7 +7,8 @@ This is meant to serve as an empty base PHP website template to speed up develop
 * PHP 7.0 or higher
 * Gulp 3.9.* or higher 
 * npm to install dependencies
-* POSIX compatible operating system with Bash (for npm setup script)
+* POSIX compatible operating system
+* Bash (for npm setup script)
 
 ## Getting Started
 
