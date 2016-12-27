@@ -20,13 +20,13 @@
                         <?php else: ?>
                            <h4><?= htmlentities($mediaListing['name']); ?></h4>
                            <ul>
-                               <li>
-                                   <?php foreach($mediaListing['files'] as $file): ?>
-                                        <a href="<?= MEDIA_URL.htmlentities($file); ?>">
-                                            <?= htmlentities($file); ?>
-                                        </a>
-                                    <?php endforeach; ?>
-                               </li>
+                            	<?php foreach($mediaListing['files'] as $file): ?>
+                                	<li> 
+                                	    <a href="<?= MEDIA_URL.htmlentities($file); ?>">
+                                        	<?= htmlentities(basename($file)); ?>
+                                    	</a>
+                                	</li>
+                            	<?php endforeach; ?>
                            </ul>
                         <?php endif; ?>
                     </li>
