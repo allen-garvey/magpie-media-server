@@ -1,12 +1,18 @@
+html{
+    font-size: 28px;
+}
 body{
     margin: 0;
     font-family: sans-serif;
-    font-size: 18px;
     background-color: seagreen;
     color: white;
 }
 h1{
-    font-size: 3.157em;
+    font-size: 2.441rem;
+}
+h4{
+    font-size: 1.2rem;
+    margin-bottom: 0;
 }
 
 ul{
@@ -14,10 +20,10 @@ ul{
     padding-left: 0;
 }
 ul ul{
-    padding-left: 1em;
+    padding-left: 1rem;
 }
 li{
-    font-size: 1.33em;
+    padding: 0.25em 0;
 }
 
 .container{
