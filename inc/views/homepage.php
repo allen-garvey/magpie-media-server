@@ -14,7 +14,7 @@
                 <?php foreach($context['media_directory_listing'] as $mediaListing): ?>
                     <li>
                         <?php if(is_string($mediaListing)): ?>
-                            <a href="<?= MEDIA_URL.urlencode($mediaListing); ?>">
+                            <a href="<?= MEDIA_URL.rawurlencode($mediaListing); ?>">
                                 <?= htmlentities($mediaListing); ?>
                             </a>
                         <?php else: ?>
@@ -22,7 +22,7 @@
                            <ul>
                             	<?php foreach($mediaListing['files'] as $file): ?>
                                 	<li> 
-                                	    <a href="<?= MEDIA_URL.htmlentities($file); ?>">
+                                	    <a href="<?= MEDIA_URL.rawurlencode($file); ?>">
                                         	<?= htmlentities(basename($file)); ?>
                                     	</a>
                                 	</li>
