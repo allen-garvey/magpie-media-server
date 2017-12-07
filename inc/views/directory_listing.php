@@ -1,26 +1,11 @@
-<?php include(VIEWS_PATH.'head.php'); ?>
+<?php 
 
-<ul>
-    <?php foreach($context['directory_listing'] as $directoryEntry): ?>
-        <li>
-            <?php if(is_string($directoryEntry)): ?>
-                <a href="<?= $context['url_base'].rawurlencode($directoryEntry); ?>">
-                    <?= htmlentities($directoryEntry); ?>
-                </a>
-            <?php else: ?>
-               <h4><?= htmlentities($directoryEntry['name']); ?></h4>
-               <ul>
-                	<?php foreach($directoryEntry['files'] as $file): ?>
-                    	<li> 
-                    	    <a href="<?= $context['url_base'].rawurlencode($file); ?>">
-                            	<?= htmlentities(basename($file)); ?>
-                        	</a>
-                    	</li>
-                	<?php endforeach; ?>
-               </ul>
-            <?php endif; ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
+require(VIEWS_PATH.'head.php'); 
 
-<?php include(VIEWS_PATH.'footer.php'); ?>
+(function(string $baseUrl, array $directoryListing){
+    require(VIEWS_PATH.'directory_list.php');
+})($context['url_base'], $context['directory_listing']);
+
+require(VIEWS_PATH.'footer.php');
+
+
